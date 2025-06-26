@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashView extends StatefulWidget {
-  const SplashView({Key? key}) : super(key: key);
+  const SplashView({super.key});
 
   @override
   State<SplashView> createState() => _SplashViewState();
@@ -45,19 +45,11 @@ class _SplashViewState extends State<SplashView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1C1B29), // Deep elegant background
       body: FadeTransition(
         opacity: _fadeAnimation,
         child: Center(
-          child: Text(
-            'Welcome to Bookly',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              letterSpacing: 1.5,
-              fontFamily: 'Georgia', // Gives it a literary feel
-            ),
+          child: Image.asset(
+            'assets/images/Logo.png', // Use your logo here
           ),
         ),
       ),

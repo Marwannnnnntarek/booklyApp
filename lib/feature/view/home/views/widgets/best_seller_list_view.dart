@@ -9,7 +9,7 @@ class BestSellerListView extends StatelessWidget {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(), // disable inner scroll
       shrinkWrap: true,
-      itemCount: 5,
+      itemCount: 10,
       itemBuilder: (context, index) {
         return BestSellerItem(
           imageUrl: 'assets/images/test_image.png',

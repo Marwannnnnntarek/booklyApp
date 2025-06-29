@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({super.key});
+class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const BookDetailsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +11,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       flexibleSpace: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Image.asset('assets/images/Logo.png'),
+          IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () => context.pop(),
           ),
-
-          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+          IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),
         ],
       ),
     );

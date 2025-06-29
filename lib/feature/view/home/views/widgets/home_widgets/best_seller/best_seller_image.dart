@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BookImageItem extends StatelessWidget {
-  const BookImageItem({Key? key}) : super(key: key);
+class BestSellerImage extends StatelessWidget {
+  const BestSellerImage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 200,
+      width: 100,
+      height: 150,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),

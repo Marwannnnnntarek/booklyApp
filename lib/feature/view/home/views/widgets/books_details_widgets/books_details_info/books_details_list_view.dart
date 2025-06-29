@@ -1,8 +1,8 @@
-import 'package:bookly/feature/view/home/views/widgets/book_image_item.dart';
+import 'package:bookly/feature/view/home/views/widgets/home_widgets/books/books_images.dart';
 import 'package:flutter/material.dart';
 
-class BooksListView extends StatelessWidget {
-  const BooksListView({Key? key}) : super(key: key);
+class BooksDetailsListView extends StatelessWidget {
+  const BooksDetailsListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class BooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return BookImageItem();
+          return BooksImages();
         },
       ),
     );

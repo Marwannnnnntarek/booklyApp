@@ -1,6 +1,6 @@
-import 'package:bookly/core/helpers/app_routes.dart';
+
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -21,9 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              // Implement search functionality here
-              // context.push(AppRoutes.search);
-              TextField();
+             
             },
           ),
         ],

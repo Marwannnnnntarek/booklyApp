@@ -5,19 +5,22 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      flexibleSpace: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Image.asset('assets/images/Logo.png'),
-          ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: AppBar(
+        automaticallyImplyLeading: false,
+        flexibleSpace: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: Image.asset('assets/images/Logo.png'),
+            ),
 
-          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-        ],
+            IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+          ],
+        ),
       ),
     );
   }

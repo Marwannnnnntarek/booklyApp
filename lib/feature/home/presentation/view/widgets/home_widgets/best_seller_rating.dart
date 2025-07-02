@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class BestSellerRating extends StatelessWidget {
-  const BestSellerRating({super.key});
-
+  const BestSellerRating({super.key, required this.rate, required this.count});
+  final String rate;
+  final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          '\$19.99',
+          'Free',
           style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
 
@@ -17,9 +18,9 @@ class BestSellerRating extends StatelessWidget {
           spacing: 6,
           children: [
             const Icon(Icons.star, color: Colors.amber, size: 16),
-            Text('4.8', style: const TextStyle(fontSize: 14)),
+            Text(rate, style: const TextStyle(fontSize: 14)),
             Text(
-              '(7654)',
+              count.toString(),
               style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
           ],

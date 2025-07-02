@@ -17,7 +17,10 @@ class BooksDetailsListView extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 10,
             itemBuilder: (context, index) {
-              return BooksImages();
+              return BooksImages(
+                imageUrl:
+                    'https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/07/how-to-make-a-url-for-a-picture-on-your-computer-4.jpg',
+              );
             },
           ),
         ),

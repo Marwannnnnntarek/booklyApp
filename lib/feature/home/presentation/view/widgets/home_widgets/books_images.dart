@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BooksImages extends StatelessWidget {
-  const BooksImages({Key? key}) : super(key: key);
+  const BooksImages({super.key});
 
   @override
   Widget build(BuildContext context) {

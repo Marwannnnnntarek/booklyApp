@@ -1,10 +1,10 @@
-import 'package:bookly/feature/home/views/widgets/home_widgets/best_seller_list_view.dart';
-import 'package:bookly/feature/home/views/widgets/home_widgets/books_list_view.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/best_seller_list_view.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/books_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/feature/home/views/widgets/home_widgets/home_app_bar.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/home_app_bar.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

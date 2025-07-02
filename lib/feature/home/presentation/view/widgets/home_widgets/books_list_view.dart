@@ -1,8 +1,8 @@
-import 'package:bookly/feature/home/views/widgets/home_widgets/books_images.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/books_images.dart';
 import 'package:flutter/material.dart';
 
 class BooksListView extends StatelessWidget {
-  const BooksListView({Key? key}) : super(key: key);
+  const BooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {

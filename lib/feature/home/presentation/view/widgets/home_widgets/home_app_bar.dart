@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -18,12 +16,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Image.asset('assets/images/Logo.png'),
           ),
 
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-             
-            },
-          ),
+          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
         ],
       ),
     );

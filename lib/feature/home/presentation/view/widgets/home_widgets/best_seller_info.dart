@@ -14,7 +14,7 @@ class BestSellerInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.push(AppRoutes.booksDetails),
+      onTap: () => context.push(AppRoutes.booksDetails, extra: item),
       child: Padding(
         padding: const EdgeInsets.only(bottom: 8),
         child: SizedBox(
@@ -22,7 +22,9 @@ class BestSellerInfo extends StatelessWidget {
           child: Row(
             spacing: 20,
             children: [
-              BooksImages(imageUrl: item.volumeInfo.imageLinks.thumbnail),
+              BooksImages(
+                imageUrl: item.volumeInfo.imageLinks?.thumbnail ?? '',
+              ),
               Expanded(
                 child: Column(
                   spacing: 40,
@@ -37,7 +39,7 @@ class BestSellerInfo extends StatelessWidget {
                     ),
                     BestSellerRating(
                       rate: item.volumeInfo.maturityRating!,
-                      count: item.volumeInfo.pageCount!,
+                      count: 108924,
                     ),
                   ],
                 ),

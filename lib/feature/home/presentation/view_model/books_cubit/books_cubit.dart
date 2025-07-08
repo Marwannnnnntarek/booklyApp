@@ -10,7 +10,7 @@ class BooksCubit extends Cubit<BooksState> {
   final HomeRepo homeRepo;
   Future<void> fetchBoosk() async {
     emit(BooksLoading());
-    final result = await homeRepo.fetchBoosk();
+    final result = await homeRepo.fetchBooks();
     result.fold(
       (failure) => emit(BooksFailure(failure.errMessage)),
       (books) => emit(BooksSuccess(books)),

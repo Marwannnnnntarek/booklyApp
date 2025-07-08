@@ -1,4 +1,7 @@
 import 'package:bookly/core/helpers/service_locator.dart';
+import 'package:bookly/feature/auth/views/email_verification_view.dart';
+import 'package:bookly/feature/auth/views/signin_view.dart';
+import 'package:bookly/feature/auth/views/signup_view.dart';
 import 'package:bookly/feature/home/data/models/book_model/item.dart';
 import 'package:bookly/feature/home/data/repos/home_repo_implementation.dart';
 import 'package:bookly/feature/home/presentation/view/books_details.dart';
@@ -12,11 +15,20 @@ class AppRoutes {
   static const String splash = '/SplashView';
   static const String home = '/HomeView';
   static const String booksDetails = '/BooksDetails';
+  static const String signup = '/SignupView';
+  static const String signin = '/SigninView';
+  static const String verify = '/EmailVerificationView';
 
   static final GoRouter router = GoRouter(
     initialLocation: splash,
     routes: [
       GoRoute(path: splash, builder: (context, state) => SplashView()),
+      GoRoute(path: signup, builder: (context, state) => SignupView()),
+      GoRoute(path: signin, builder: (context, state) => SigninView()),
+      GoRoute(
+        path: verify,
+        builder: (context, state) => EmailVerificationView(),
+      ),
       GoRoute(path: home, builder: (context, state) => HomeView()),
       GoRoute(
         path: booksDetails,

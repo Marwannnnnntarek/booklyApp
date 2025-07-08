@@ -2,7 +2,7 @@ import 'package:bookly/feature/home/data/models/book_model/item.dart';
 import 'package:bookly/feature/home/presentation/view/widgets/books_details_widgets/books_details_app_bar.dart';
 import 'package:bookly/feature/home/presentation/view/widgets/books_details_widgets/books_details_info.dart';
 import 'package:bookly/feature/home/presentation/view/widgets/books_details_widgets/books_details_list_view.dart';
-import 'package:bookly/feature/home/presentation/view_model/similar_books/similar_books_cubit.dart';
+import 'package:bookly/feature/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

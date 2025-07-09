@@ -27,7 +27,7 @@ class BooksDetailsInfo extends StatelessWidget {
           rating: item.volumeInfo.maturityRating!,
           count: '87585',
         ),
-        BooksDetailsBar(),
+        BooksDetailsBar(item: item),
       ],
     );
   }

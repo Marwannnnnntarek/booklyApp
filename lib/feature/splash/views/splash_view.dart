@@ -36,7 +36,7 @@ class _SplashViewState extends State<SplashView>
     _animationController.forward();
 
     Timer(const Duration(seconds: 4), () {
-      context.go(AppRoutes.home);
+      context.go(AppRoutes.splashPageView);
     });
   }
 

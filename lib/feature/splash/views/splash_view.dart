@@ -12,8 +12,9 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation<double> _fadeAnimation;
+  late final AnimationController _animationController;
+  late final Animation<double> _fadeAnimation;
+  late final Animation<double> _scaleAnimation;
 
   @override
   void initState() {
@@ -24,14 +25,17 @@ class _SplashViewState extends State<SplashView>
       duration: const Duration(seconds: 2),
     );
 
-    _fadeAnimation = Tween<double>(
-      begin: 0,
-      end: 1,
-    ).animate(_animationController);
+    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
+    );
+
+    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.elasticOut),
+    );
 
     _animationController.forward();
 
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 4), () {
       context.go(AppRoutes.home);
     });
   }
@@ -45,11 +49,18 @@ class _SplashViewState extends State<SplashView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FadeTransition(
-        opacity: _fadeAnimation,
-        child: Center(
-          child: Image.asset(
-            'assets/images/Logo.png', // Use your logo here
+      backgroundColor: Color(0xff7A68FF),
+      body: Center(
+        child: FadeTransition(
+          opacity: _fadeAnimation,
+          child: ScaleTransition(
+            scale: _scaleAnimation,
+            child: Hero(
+              tag: 'splash-title',
+              child: Image.asset(
+                'assets/images/Logo.png', // Use your logo here
+              ),
+            ),
           ),
         ),
       ),

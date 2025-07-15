@@ -17,7 +17,7 @@ class Splash3Body extends StatelessWidget {
           'Let us be your guide through a landscape of literature designed to match your unique taste and interests.',
       textButton1: 'Start My Adventure',
       onPressed1: () {
-        context.go(AppRoutes.home);
+        context.push(AppRoutes.auth);
       },
       textButton2: 'Back to start',
       onPressed2: () {

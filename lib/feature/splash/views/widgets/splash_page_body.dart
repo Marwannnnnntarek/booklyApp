@@ -44,7 +44,7 @@ class SplashPageBody extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.08,
+                  horizontal: size.width * 0.05,
                   vertical: size.height * 0.08,
                 ),
                 child: Column(

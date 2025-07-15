@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bookly/core/helpers/app_routes.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -50,19 +51,9 @@ class _SplashViewState extends State<SplashView>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff7A68FF),
-      body: Center(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: ScaleTransition(
-            scale: _scaleAnimation,
-            child: Hero(
-              tag: 'splash-title',
-              child: Image.asset(
-                'assets/images/Logo.png', // Use your logo here
-              ),
-            ),
-          ),
-        ),
+      body: SplashBody(
+        fadeAnimation: _fadeAnimation,
+        scaleAnimation: _scaleAnimation,
       ),
     );
   }

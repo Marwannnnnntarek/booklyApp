@@ -12,6 +12,7 @@ import 'package:go_router/go_router.dart';
 class AppRoutes {
   static const String splash = '/SplashView';
   static const String splashPageView = '/SplashPageView';
+
   static const String home = '/HomeView';
   static const String booksDetails = '/BooksDetails';
 
@@ -23,6 +24,7 @@ class AppRoutes {
         path: splashPageView,
         builder: (context, state) => SplashPageView(),
       ),
+
       GoRoute(path: home, builder: (context, state) => HomeView()),
       GoRoute(
         path: booksDetails,

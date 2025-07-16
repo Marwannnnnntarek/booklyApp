@@ -26,7 +26,7 @@ class _AuthRegisterState extends State<AuthRegister> {
       children: [
         AuthTextField(
           label: 'Email address',
-          hint: 'example@gmail',
+          hint: 'you@example.com',
           controller: emailController,
         ),
         const SizedBox(height: 20),

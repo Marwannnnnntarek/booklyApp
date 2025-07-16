@@ -46,11 +46,14 @@ class _AuthLoginState extends State<AuthLogin> {
             context.go(AppRoutes.home);
           },
         ),
-        AuthToggleText(
-          actionText: 'Forgot password',
-          onPressed: () {
-            context.push(AppRoutes.reset);
-          },
+        Align(
+          alignment: Alignment.topLeft,
+          child: AuthToggleText(
+            actionText: 'Forgot password?',
+            onPressed: () {
+              context.push(AppRoutes.reset1);
+            },
+          ),
         ),
       ],
     );

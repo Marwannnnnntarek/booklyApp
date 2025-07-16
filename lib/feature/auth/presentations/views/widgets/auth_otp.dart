@@ -1,29 +1,21 @@
 import 'package:bookly/core/helpers/app_routes.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_button.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_header2.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_toggle_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class AuthOtp extends StatelessWidget {
-  const AuthOtp({
-    super.key,
-    required this.label,
-    required this.title,
-    required this.subTitle,
-  });
-  final String label, title, subTitle;
+  const AuthOtp({super.key, required this.label});
+  final String label;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          title,
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-        ),
-        Text(
-          subTitle,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+        AuthHeader2(
+          title: 'Verify Your Email Address',
+          subTitle: "Almost there! let's get your account verified",
         ),
         const SizedBox(height: 80),
         Align(
@@ -51,7 +43,7 @@ class AuthOtp extends StatelessWidget {
           alignment: Alignment.topLeft,
           child: AuthToggleText(actionText: 'Resend OTP?', onPressed: () {}),
         ),
-        const SizedBox(height: 80),
+        Spacer(),
         AuthButton(
           label: 'Continue',
           onPressed: () {

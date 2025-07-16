@@ -1,8 +1,8 @@
 import 'package:bookly/feature/auth/presentations/views/widgets/reset_password_body.dart';
 import 'package:flutter/material.dart';
 
-class ResetPasswordView extends StatelessWidget {
-  const ResetPasswordView({super.key});
+class ResetPasswordView1 extends StatelessWidget {
+  const ResetPasswordView1({super.key});
 
   @override
   Widget build(BuildContext context) {

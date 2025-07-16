@@ -8,15 +8,18 @@ class EmailVerificationBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: size.width * 0.06,
-          vertical: size.height * 0.08,
-        ),
-        child: AuthOtp(
-          title: 'Verify Your Email Address',
-          subTitle: "Almost there! let's get your account verified",
-          label: 'Input your OTP',
+      child: SizedBox(
+        height: size.height,
+        width: size.width,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: size.width * 0.06,
+              vertical: size.height * 0.08,
+            ),
+            child: AuthOtp(label: 'Input your OTP'),
+          ),
         ),
       ),
     );

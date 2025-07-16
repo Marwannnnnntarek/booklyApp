@@ -28,7 +28,10 @@ class _LoginAndRegisterBodyState extends State<LoginAndRegisterBody> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                AuthHeader(),
+                AuthHeader(
+                  image: 'assets/images/Star 8.png',
+                  title: 'Bookly App',
+                ),
                 const SizedBox(height: 40),
                 // Toggle Buttons
                 Container(

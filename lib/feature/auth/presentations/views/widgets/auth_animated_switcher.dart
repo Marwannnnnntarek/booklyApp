@@ -1,5 +1,5 @@
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/login_body.dart';
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/register_body.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_login.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_register.dart';
 import 'package:flutter/material.dart';
 
 class AuthAnimatedSwitcher extends StatelessWidget {
@@ -11,7 +11,7 @@ class AuthAnimatedSwitcher extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 300),
-      child: isLoginSelected ? LoginBody() : RegisterBody(),
+      child: isLoginSelected ? AuthLogin() : AuthRegister(),
     );
   }
 }

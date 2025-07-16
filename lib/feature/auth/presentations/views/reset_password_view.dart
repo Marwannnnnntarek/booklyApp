@@ -1,4 +1,4 @@
-import 'package:bookly/feature/auth/presentations/views/widgets/reset_password_widgets/reset_password_body.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/reset_password_body.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordView extends StatelessWidget {

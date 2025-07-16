@@ -1,24 +1,21 @@
 import 'package:bookly/core/helpers/app_routes.dart';
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_button.dart';
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_text_field.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_button.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_text_field.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_toggle_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class RegisterBody extends StatefulWidget {
-  const RegisterBody({super.key});
+class AuthLogin extends StatefulWidget {
+  const AuthLogin({super.key});
 
   @override
-  State<RegisterBody> createState() => _RegisterBodyState();
+  State<AuthLogin> createState() => _AuthLoginState();
 }
 
-class _RegisterBodyState extends State<RegisterBody> {
+class _AuthLoginState extends State<AuthLogin> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
-
   bool _obscurePassword = true;
-  bool _obscureConfirmPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +23,13 @@ class _RegisterBodyState extends State<RegisterBody> {
       children: [
         AuthTextField(
           label: 'Email address',
-          hint: 'example@gmail',
+          hint: 'Enter your email',
           controller: emailController,
         ),
         const SizedBox(height: 20),
         AuthTextField(
           label: 'Password',
-          hint: 'minimum 8 characters',
+          hint: 'Enter your password',
           controller: passwordController,
           isPassword: true,
           obscureText: _obscurePassword,
@@ -43,23 +40,16 @@ class _RegisterBodyState extends State<RegisterBody> {
           },
         ),
         const SizedBox(height: 20),
-        AuthTextField(
-          label: 'Confirm password',
-          hint: 'repeat your password',
-          controller: confirmPasswordController,
-          isPassword: true,
-          obscureText: _obscureConfirmPassword,
-          togglePassword: () {
-            setState(() {
-              _obscureConfirmPassword = !_obscureConfirmPassword;
-            });
-          },
-        ),
-        const SizedBox(height: 20),
         AuthButton(
-          label: 'Sign up',
+          label: 'Sign in',
           onPressed: () {
             context.go(AppRoutes.home);
+          },
+        ),
+        AuthToggleText(
+          actionText: 'Forgot password',
+          onPressed: () {
+            context.push(AppRoutes.reset);
           },
         ),
       ],

@@ -1,16 +1,16 @@
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_animated_switcher.dart';
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_header.dart';
-import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_toggle_button.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_animated_switcher.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_header.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_toggle_button.dart';
 import 'package:flutter/material.dart';
 
-class AuthBody extends StatefulWidget {
-  const AuthBody({super.key});
+class LoginAndRegisterBody extends StatefulWidget {
+  const LoginAndRegisterBody({super.key});
 
   @override
-  State<AuthBody> createState() => _AuthBodyState();
+  State<LoginAndRegisterBody> createState() => _LoginAndRegisterBodyState();
 }
 
-class _AuthBodyState extends State<AuthBody> {
+class _LoginAndRegisterBodyState extends State<LoginAndRegisterBody> {
   bool isLoginSelected = true;
 
   @override

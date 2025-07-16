@@ -1,5 +1,5 @@
 import 'package:bookly/core/services/service_locator.dart';
-import 'package:bookly/feature/auth/presentations/views/auth_view.dart';
+import 'package:bookly/feature/auth/presentations/views/login_and_register_view.dart';
 import 'package:bookly/feature/auth/presentations/views/email_verification_view.dart';
 import 'package:bookly/feature/auth/presentations/views/reset_password_view.dart';
 import 'package:bookly/feature/home/data/models/book_model/item.dart';
@@ -15,7 +15,7 @@ import 'package:go_router/go_router.dart';
 class AppRoutes {
   static const String splash = '/SplashView';
   static const String splashPageView = '/SplashPageView';
-  static const String auth = '/AuthView';
+  static const String loginAndRegister = '/LoginAndRegisterView';
   static const String verify = '/EmailVerificationView';
   static const String reset = '/ResetPasswordView';
   static const String home = '/HomeView';
@@ -29,7 +29,10 @@ class AppRoutes {
         path: splashPageView,
         builder: (context, state) => SplashPageView(),
       ),
-      GoRoute(path: auth, builder: (context, state) => AuthView()),
+      GoRoute(
+        path: loginAndRegister,
+        builder: (context, state) => LoginAndRegisterView(),
+      ),
       GoRoute(
         path: verify,
         builder: (context, state) => EmailVerificationView(),

@@ -1,4 +1,4 @@
-import 'package:bookly/feature/auth/presentations/views/widgets/reset_password_body.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/reset_password_body1.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordView1 extends StatelessWidget {
@@ -8,7 +8,7 @@ class ResetPasswordView1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff6B5FF8),
-      body: ResetPasswordBody(),
+      body: ResetPasswordBody1(),
     );
   }
 }

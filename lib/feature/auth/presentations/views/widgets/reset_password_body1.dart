@@ -3,9 +3,10 @@ import 'package:bookly/feature/auth/presentations/views/widgets/auth_header2.dar
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_text_field.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_toggle_text.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class ResetPasswordBody extends StatelessWidget {
-  ResetPasswordBody({super.key});
+class ResetPasswordBody1 extends StatelessWidget {
+  ResetPasswordBody1({super.key});
   final TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,12 @@ class ResetPasswordBody extends StatelessWidget {
                 ),
                 Spacer(), // pushes up when keyboard shows
                 AuthButton(label: 'Request OTP', onPressed: () {}),
-                AuthToggleText(actionText: 'Cancel Request', onPressed: () {}),
+                AuthToggleText(
+                  actionText: 'Cancel Request',
+                  onPressed: () {
+                    context.pop();
+                  },
+                ),
               ],
             ),
           ),

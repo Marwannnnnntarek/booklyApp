@@ -6,25 +6,30 @@ import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class AuthOtp extends StatelessWidget {
-  const AuthOtp({super.key, required this.label});
-  final String label;
+  const AuthOtp({
+    super.key,
+    required this.label,
+    required this.title,
+    required this.subTitle,
+  });
+  final String label, title, subTitle;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          'Verify Your Email Address',
+          title,
           style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         ),
         Text(
-          'Almost there! Let’s get your account verified',
+          subTitle,
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
         ),
         const SizedBox(height: 80),
         Align(
           alignment: Alignment.topLeft,
           child: Text(
-            'Input your OTP',
+            label,
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
           ),
         ),

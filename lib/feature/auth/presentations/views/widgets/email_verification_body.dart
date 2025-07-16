@@ -13,7 +13,11 @@ class EmailVerificationBody extends StatelessWidget {
           horizontal: size.width * 0.06,
           vertical: size.height * 0.08,
         ),
-        child: Column(children: [AuthOtp(label: 'Input your OTP')]),
+        child: AuthOtp(
+          title: 'Verify Your Email Address',
+          subTitle: "Almost there! let's get your account verified",
+          label: 'Input your OTP',
+        ),
       ),
     );
   }

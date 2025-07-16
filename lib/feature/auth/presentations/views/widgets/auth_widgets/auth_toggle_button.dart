@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomToggleButton extends StatelessWidget {
-  const CustomToggleButton({
+class AuthToggleButton extends StatelessWidget {
+  const AuthToggleButton({
     super.key,
     required this.text,
     required this.isSelected,

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AuthPrimaryButton extends StatelessWidget {
-  final String text;
+class AuthButton extends StatelessWidget {
+  final String label;
   final VoidCallback onPressed;
 
-  const AuthPrimaryButton({
-    super.key,
-    required this.text,
-    required this.onPressed,
-  });
+  const AuthButton({super.key, required this.label, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +13,13 @@ class AuthPrimaryButton extends StatelessWidget {
       child: TextButton(
         style: TextButton.styleFrom(
           backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
         ),
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-        ),
+        child: Text(label, style: const TextStyle(fontSize: 18)),
       ),
     );
   }

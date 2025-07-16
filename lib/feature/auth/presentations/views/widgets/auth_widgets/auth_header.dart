@@ -7,14 +7,16 @@ class AuthHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/Illustration.png'),
-        const SizedBox(height: 12),
-        const Text(
-          'Welcome to bookly!',
-          textAlign: TextAlign.center,
+        Align(
+          alignment: Alignment.topRight,
+          child: Image.asset('assets/images/Star 8.png'),
+        ),
+        const SizedBox(height: 44),
+        Text(
+          'Bookly App',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 32,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),

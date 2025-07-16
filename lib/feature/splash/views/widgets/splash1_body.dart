@@ -24,7 +24,7 @@ class Splash1Body extends StatelessWidget {
       },
       textButton2: 'Skip to login',
       onPressed2: () {
-        context.go(AppRoutes.home);
+        context.go(AppRoutes.auth);
       },
     );
   }

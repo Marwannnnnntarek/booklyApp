@@ -1,6 +1,6 @@
-import 'package:bookly/feature/auth/presentations/views/login_view.dart';
-import 'package:bookly/feature/auth/presentations/views/register_view.dart';
-import 'package:bookly/feature/auth/presentations/views/widgets/custom_toggle_button.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_animated_switcher.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_header.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_widgets/auth_toggle_button.dart';
 import 'package:flutter/material.dart';
 
 class AuthBody extends StatefulWidget {
@@ -16,8 +16,8 @@ class _AuthBodyState extends State<AuthBody> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Center(
+    return SingleChildScrollView(
+      child: Center(
         child: Align(
           alignment: Alignment.topCenter,
           child: Padding(
@@ -28,19 +28,7 @@ class _AuthBodyState extends State<AuthBody> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Image.asset('assets/images/Star 8.png'),
-                ),
-                const SizedBox(height: 44),
-                Text(
-                  'Bookly App',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                AuthHeader(),
                 const SizedBox(height: 40),
                 // Toggle Buttons
                 Container(
@@ -51,7 +39,7 @@ class _AuthBodyState extends State<AuthBody> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CustomToggleButton(
+                      AuthToggleButton(
                         text: "Login",
                         isSelected: isLoginSelected,
                         onTap: () {
@@ -60,7 +48,7 @@ class _AuthBodyState extends State<AuthBody> {
                           });
                         },
                       ),
-                      CustomToggleButton(
+                      AuthToggleButton(
                         text: "Register",
                         isSelected: !isLoginSelected,
                         onTap: () {
@@ -73,14 +61,7 @@ class _AuthBodyState extends State<AuthBody> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                // View Body
-                AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 300),
-                  child:
-                      isLoginSelected
-                          ? const LoginView()
-                          : const RegisterView(),
-                ),
+                AuthAnimatedSwitcher(isLoginSelected: isLoginSelected),
               ],
             ),
           ),

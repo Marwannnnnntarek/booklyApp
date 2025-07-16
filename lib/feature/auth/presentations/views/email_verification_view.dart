@@ -1,4 +1,4 @@
-import 'package:bookly/feature/auth/presentations/views/w/email_verification_body.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/email_verification_body.dart';
 import 'package:flutter/material.dart';
 
 class EmailVerificationView extends StatelessWidget {

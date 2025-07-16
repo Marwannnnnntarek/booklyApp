@@ -35,20 +35,20 @@ class _LoginBodyState extends State<LoginBody> {
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
               enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(color: Color(0xffD8DADC)),
               ),
               focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(color: Colors.black),
               ),
-              labelText: 'Your email',
-              labelStyle: TextStyle(
+              // labelText: 'Your email',
+              hintStyle: TextStyle(
                 color: Color(0x55000000),
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
               ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-              ),
+              hintText: 'Enter your email',
             ),
           ),
         ),

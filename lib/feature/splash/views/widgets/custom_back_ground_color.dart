@@ -5,9 +5,11 @@ class CustomBackGroundColor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Container(
-      height: 750,
-      width: double.infinity,
+      height: size.height,
+      width: size.width,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,

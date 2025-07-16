@@ -12,10 +12,7 @@ class AuthToggleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: Align(
-        alignment: Alignment.topRight,
-        child: Text('Forgot password?', style: TextStyle(color: Colors.black)),
-      ),
+      child: Text(actionText, style: TextStyle(color: Colors.black)),
     );
   }
 }

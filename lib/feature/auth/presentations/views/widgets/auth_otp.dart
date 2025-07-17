@@ -1,4 +1,3 @@
-import 'package:bookly/core/helpers/app_routes.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_button.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_header2.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_toggle_text.dart';
@@ -12,8 +11,10 @@ class AuthOtp extends StatelessWidget {
     required this.label,
     required this.authButton,
     required this.authToggleText,
+    required this.onPressed,
   });
   final String label, authButton, authToggleText;
+  final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,12 +50,7 @@ class AuthOtp extends StatelessWidget {
           child: AuthToggleText(actionText: 'Resend OTP?', onPressed: () {}),
         ),
         Spacer(),
-        AuthButton(
-          label: authButton,
-          onPressed: () {
-            context.go(AppRoutes.home);
-          },
-        ),
+        AuthButton(label: authButton, onPressed: onPressed),
         AuthToggleText(
           actionText: authToggleText,
           onPressed: () {

@@ -1,5 +1,7 @@
+import 'package:bookly/core/helpers/app_routes.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_otp.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EmailVerificationBody extends StatelessWidget {
   const EmailVerificationBody({super.key});
@@ -22,6 +24,9 @@ class EmailVerificationBody extends StatelessWidget {
               label: 'Input your OTP',
               authButton: 'Continue',
               authToggleText: 'Cancel',
+              onPressed: () {
+                context.go(AppRoutes.home);
+              },
             ),
           ),
         ),

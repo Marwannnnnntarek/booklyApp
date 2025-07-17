@@ -3,6 +3,7 @@ import 'package:bookly/feature/auth/presentations/views/login_and_register_view.
 import 'package:bookly/feature/auth/presentations/views/email_verification_view.dart';
 import 'package:bookly/feature/auth/presentations/views/reset_password_view1.dart';
 import 'package:bookly/feature/auth/presentations/views/reset_password_view2.dart';
+import 'package:bookly/feature/auth/presentations/views/reset_password_view3.dart';
 import 'package:bookly/feature/home/data/models/book_model/item.dart';
 import 'package:bookly/feature/home/data/repos/home_repo_implementation.dart';
 import 'package:bookly/feature/home/presentation/view/books_details.dart';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const String verify = '/EmailVerificationView';
   static const String reset1 = '/ResetPasswordView1';
   static const String reset2 = '/ResetPasswordView2';
+  static const String reset3 = '/ResetPasswordView3';
   static const String home = '/HomeView';
   static const String booksDetails = '/BooksDetails';
 
@@ -41,6 +43,7 @@ class AppRoutes {
       ),
       GoRoute(path: reset1, builder: (context, state) => ResetPasswordView1()),
       GoRoute(path: reset2, builder: (context, state) => ResetPasswordView2()),
+      GoRoute(path: reset3, builder: (context, state) => ResetPasswordView3()),
       GoRoute(path: home, builder: (context, state) => HomeView()),
       GoRoute(
         path: booksDetails,

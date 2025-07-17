@@ -1,5 +1,7 @@
+import 'package:bookly/core/helpers/app_routes.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_otp.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ResetPasswordBody2 extends StatelessWidget {
   const ResetPasswordBody2({super.key});
@@ -22,6 +24,9 @@ class ResetPasswordBody2 extends StatelessWidget {
               label: 'Input your OTP',
               authButton: 'Verify Email Address',
               authToggleText: 'Previous step',
+              onPressed: () {
+                context.push(AppRoutes.reset3);
+              },
             ),
           ),
         ),

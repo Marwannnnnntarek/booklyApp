@@ -1,3 +1,4 @@
+import 'package:bookly/core/helpers/app_routes.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_button.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_header2.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_text_field.dart';
@@ -40,7 +41,12 @@ class ResetPasswordBody1 extends StatelessWidget {
                   child: Text('An OTP will be sent to this address'),
                 ),
                 Spacer(), // pushes up when keyboard shows
-                AuthButton(label: 'Request OTP', onPressed: () {}),
+                AuthButton(
+                  label: 'Request OTP',
+                  onPressed: () {
+                    context.push(AppRoutes.reset2);
+                  },
+                ),
                 AuthToggleText(
                   actionText: 'Cancel Request',
                   onPressed: () {

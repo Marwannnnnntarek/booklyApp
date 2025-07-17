@@ -1,8 +1,8 @@
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_otp.dart';
 import 'package:flutter/material.dart';
 
-class EmailVerificationBody extends StatelessWidget {
-  const EmailVerificationBody({super.key});
+class ResetPasswordBody2 extends StatelessWidget {
+  const ResetPasswordBody2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class EmailVerificationBody extends StatelessWidget {
             ),
             child: AuthOtp(
               label: 'Input your OTP',
-              authButton: 'Continue',
-              authToggleText: 'Cancel',
+              authButton: 'Verify Email Address',
+              authToggleText: 'Previous step',
             ),
           ),
         ),

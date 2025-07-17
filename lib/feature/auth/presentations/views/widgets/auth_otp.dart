@@ -7,8 +7,13 @@ import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class AuthOtp extends StatelessWidget {
-  const AuthOtp({super.key, required this.label});
-  final String label;
+  const AuthOtp({
+    super.key,
+    required this.label,
+    required this.authButton,
+    required this.authToggleText,
+  });
+  final String label, authButton, authToggleText;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,9 +50,15 @@ class AuthOtp extends StatelessWidget {
         ),
         Spacer(),
         AuthButton(
-          label: 'Continue',
+          label: authButton,
           onPressed: () {
             context.go(AppRoutes.home);
+          },
+        ),
+        AuthToggleText(
+          actionText: authToggleText,
+          onPressed: () {
+            context.pop();
           },
         ),
       ],

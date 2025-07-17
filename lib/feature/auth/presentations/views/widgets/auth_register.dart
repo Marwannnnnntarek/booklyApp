@@ -59,7 +59,7 @@ class _AuthRegisterState extends State<AuthRegister> {
         AuthButton(
           label: 'Sign up',
           onPressed: () {
-            context.go(AppRoutes.verify);
+            context.push(AppRoutes.verify);
           },
         ),
       ],

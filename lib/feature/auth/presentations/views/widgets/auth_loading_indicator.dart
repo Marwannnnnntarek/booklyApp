@@ -30,7 +30,7 @@ class _AuthLoadingIndicatorState extends State<AuthLoadingIndicator>
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size.width * 0.15;
+    final size = MediaQuery.of(context).size.width * 0.11;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,

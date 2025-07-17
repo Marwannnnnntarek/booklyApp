@@ -68,18 +68,30 @@ class _AuthRegisterState extends State<AuthRegister> {
             },
           ),
           const SizedBox(height: 20),
-          AuthButton(
-            label: 'Sign up',
-            onPressed: () {
-              if (passwordController.text != confirmPasswordController.text) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Passwords do not match')),
-                );
-                return;
-              }
-              context.read<AuthCubit>().register(
-                emailController.text.trim(),
-                passwordController.text.trim(),
+          BlocBuilder<AuthCubit, AuthState>(
+            builder: (context, state) {
+              final isLoading = state is AuthLoading;
+              return AuthButton(
+                label: 'Sign up',
+                isLoading: isLoading,
+                onPressed:
+                    isLoading
+                        ? null
+                        : () {
+                          if (passwordController.text !=
+                              confirmPasswordController.text) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Passwords do not match'),
+                              ),
+                            );
+                            return;
+                          }
+                          context.read<AuthCubit>().register(
+                            emailController.text.trim(),
+                            passwordController.text.trim(),
+                          );
+                        },
               );
             },
           ),

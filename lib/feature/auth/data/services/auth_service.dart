@@ -27,20 +27,20 @@ class AuthService {
     await _auth.signInWithEmailAndPassword(email: email, password: password);
   }
 
-  // 🔹 Send Email Verification
-  Future<void> sendEmailVerification() async {
-    final user = _auth.currentUser;
-    if (user != null && !user.emailVerified) {
-      await user.sendEmailVerification();
-    }
-  }
+  // // 🔹 Send Email Verification
+  // Future<void> sendEmailVerification() async {
+  //   final user = _auth.currentUser;
+  //   if (user != null && !user.emailVerified) {
+  //     await user.sendEmailVerification();
+  //   }
+  // }
 
-  // 🔹 Check if Email is Verified
-  Future<bool> isEmailVerified() async {
-    final user = _auth.currentUser;
-    await user?.reload();
-    return user?.emailVerified ?? false;
-  }
+  // // 🔹 Check if Email is Verified
+  // Future<bool> isEmailVerified() async {
+  //   final user = _auth.currentUser;
+  //   await user?.reload();
+  //   return user?.emailVerified ?? false;
+  // }
 
   // 🔹 Send Password Reset Email
   Future<void> resetPassword(String email) async {

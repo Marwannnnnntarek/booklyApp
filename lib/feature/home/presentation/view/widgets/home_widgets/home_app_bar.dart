@@ -1,5 +1,6 @@
 import 'package:bookly/core/helpers/app_routes.dart';
 import 'package:bookly/feature/auth/presentations/view_model/cubit/auth_cubit.dart';
+import 'package:bookly/feature/auth/presentations/views/widgets/auth_logout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -31,13 +32,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 width: 100,
                 child: Image.asset('assets/images/Logo.png'),
               ),
-
-              IconButton(
-                icon: const Icon(Icons.logout),
-                onPressed: () {
-                  context.read<AuthCubit>().logout();
-                },
-              ),
+              AuthLogout(),
             ],
           ),
         ),

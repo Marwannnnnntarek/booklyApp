@@ -30,8 +30,6 @@ class _AuthRegisterState extends State<AuthRegister> {
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(SnackBar(content: Text(state.errMessage)));
-        } else if (state is OtpSent) {
-          context.push(AppRoutes.otpVerify);
         } else if (state is EmailVerificationSent) {
           context.push(AppRoutes.emailVerify);
         }
@@ -108,7 +106,10 @@ class _AuthRegisterState extends State<AuthRegister> {
                             );
                             return;
                           }
-                          context.read<AuthCubit>().register(input, password);
+                          context.read<AuthCubit>().registerWithEmail(
+                            input,
+                            password,
+                          );
                         },
               );
             },

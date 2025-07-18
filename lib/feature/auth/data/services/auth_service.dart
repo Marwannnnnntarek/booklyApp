@@ -49,50 +49,50 @@ class AuthService {
     }
   }
 
-  // ───────────────────────── PHONE METHODS ─────────────────────────
+  // // ───────────────────────── PHONE METHODS ─────────────────────────
 
-  /// Check if a phone number is already registered in Firestore
-  Future<bool> isPhoneRegistered(String phoneNumber) async {
-    final query =
-        await _firestore
-            .collection('users')
-            .where('phone', isEqualTo: phoneNumber)
-            .get();
-    return query.docs.isNotEmpty;
-  }
+  // /// Check if a phone number is already registered in Firestore
+  // Future<bool> isPhoneRegistered(String phoneNumber) async {
+  //   final query =
+  //       await _firestore
+  //           .collection('users')
+  //           .where('phone', isEqualTo: phoneNumber)
+  //           .get();
+  //   return query.docs.isNotEmpty;
+  // }
 
-  /// Start phone number verification
-  Future<void> verifyPhoneNumber({
-    required String phoneNumber,
-    required Function(String verificationId) onCodeSent,
-    required Function(String error) onVerificationFailed,
-    required Function(PhoneAuthCredential credential) onAutoVerified,
-  }) async {
-    await _auth.verifyPhoneNumber(
-      phoneNumber: phoneNumber,
-      timeout: const Duration(seconds: 60),
-      verificationCompleted: onAutoVerified,
-      verificationFailed: (FirebaseAuthException e) {
-        onVerificationFailed(e.message ?? 'Phone verification failed');
-      },
-      codeSent: (String verificationId, int? resendToken) {
-        onCodeSent(verificationId);
-      },
-      codeAutoRetrievalTimeout: (_) {},
-    );
-  }
+  // /// Start phone number verification
+  // Future<void> verifyPhoneNumber({
+  //   required String phoneNumber,
+  //   required Function(String verificationId) onCodeSent,
+  //   required Function(String error) onVerificationFailed,
+  //   required Function(PhoneAuthCredential credential) onAutoVerified,
+  // }) async {
+  //   await _auth.verifyPhoneNumber(
+  //     phoneNumber: phoneNumber,
+  //     timeout: const Duration(seconds: 60),
+  //     verificationCompleted: onAutoVerified,
+  //     verificationFailed: (FirebaseAuthException e) {
+  //       onVerificationFailed(e.message ?? 'Phone verification failed');
+  //     },
+  //     codeSent: (String verificationId, int? resendToken) {
+  //       onCodeSent(verificationId);
+  //     },
+  //     codeAutoRetrievalTimeout: (_) {},
+  //   );
+  // }
 
-  /// Verify the SMS code and sign in the user
-  Future<void> verifySmsCode({
-    required String verificationId,
-    required String smsCode,
-  }) async {
-    final credential = PhoneAuthProvider.credential(
-      verificationId: verificationId,
-      smsCode: smsCode,
-    );
-    await _auth.signInWithCredential(credential);
-  }
+  // /// Verify the SMS code and sign in the user
+  // Future<void> verifySmsCode({
+  //   required String verificationId,
+  //   required String smsCode,
+  // }) async {
+  //   final credential = PhoneAuthProvider.credential(
+  //     verificationId: verificationId,
+  //     smsCode: smsCode,
+  //   );
+  //   await _auth.signInWithCredential(credential);
+  // }
 
   // ───────────────────────── FIRESTORE ─────────────────────────
 

@@ -1,7 +1,6 @@
 import 'package:bookly/core/services/service_locator.dart';
 import 'package:bookly/feature/auth/presentations/views/email_verification_view.dart';
 import 'package:bookly/feature/auth/presentations/views/login_and_register_view.dart';
-import 'package:bookly/feature/auth/presentations/views/otp_verification_view.dart';
 import 'package:bookly/feature/auth/presentations/views/reset_password_view1.dart';
 import 'package:bookly/feature/auth/presentations/views/reset_password_view2.dart';
 import 'package:bookly/feature/auth/presentations/views/reset_password_view3.dart';
@@ -19,7 +18,7 @@ class AppRoutes {
   static const String splash = '/SplashView';
   static const String splashPageView = '/SplashPageView';
   static const String loginAndRegister = '/LoginAndRegisterView';
-  static const String otpVerify = '/OtpVerificationView';
+  // static const String otpVerify = '/OtpVerificationView';
   static const String emailVerify = '/EmailVerificationView';
   static const String reset1 = '/ResetPasswordView1';
   static const String reset2 = '/ResetPasswordView2';
@@ -39,10 +38,10 @@ class AppRoutes {
         path: loginAndRegister,
         builder: (context, state) => LoginAndRegisterView(),
       ),
-      GoRoute(
-        path: otpVerify,
-        builder: (context, state) => OtpVerificationView(),
-      ),
+      // GoRoute(
+      //   path: otpVerify,
+      //   builder: (context, state) => OtpVerificationView(),
+      // ),
       GoRoute(
         path: emailVerify,
         builder: (context, state) => EmailVerificationView(),

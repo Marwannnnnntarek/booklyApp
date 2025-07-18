@@ -20,6 +20,4 @@ class AuthFailure extends AuthState {
   List<Object?> get props => [errMessage];
 }
 
-class OtpSent extends AuthState {}
-
 class EmailVerificationSent extends AuthState {}

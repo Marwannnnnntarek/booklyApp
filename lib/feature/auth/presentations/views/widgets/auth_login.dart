@@ -62,7 +62,7 @@ class _AuthLoginState extends State<AuthLogin> {
                     isLoading
                         ? null
                         : () {
-                          context.read<AuthCubit>().login(
+                          context.read<AuthCubit>().loginWithEmail(
                             emailController.text.trim(),
                             passwordController.text.trim(),
                           );

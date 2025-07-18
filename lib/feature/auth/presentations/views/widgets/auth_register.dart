@@ -14,37 +14,39 @@ class AuthRegister extends StatefulWidget {
 }
 
 class _AuthRegisterState extends State<AuthRegister> {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController emailOrPhoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
-
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {
-          context.push(AppRoutes.verify);
+          context.push(AppRoutes.home);
         } else if (state is AuthFailure) {
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(SnackBar(content: Text(state.errMessage)));
+        } else if (state is OtpSent) {
+          context.push(AppRoutes.otpVerify);
+        } else if (state is EmailVerificationSent) {
+          context.push(AppRoutes.emailVerify);
         }
       },
       child: Column(
         children: [
           AuthTextField(
-            label: 'Email address',
-            hint: 'you@example.com',
-            controller: emailController,
+            label: 'Email or Phone Number',
+            hint: 'you@example.com or +201234567890',
+            controller: emailOrPhoneController,
           ),
           const SizedBox(height: 20),
           AuthTextField(
             label: 'Password',
-            hint: 'minimum 8 characters',
+            hint: 'Minimum 8 characters',
             controller: passwordController,
             isPassword: true,
             obscureText: _obscurePassword,
@@ -56,8 +58,8 @@ class _AuthRegisterState extends State<AuthRegister> {
           ),
           const SizedBox(height: 20),
           AuthTextField(
-            label: 'Confirm password',
-            hint: 'repeat your password',
+            label: 'Confirm Password',
+            hint: 'Repeat your password',
             controller: confirmPasswordController,
             isPassword: true,
             obscureText: _obscureConfirmPassword,
@@ -72,14 +74,23 @@ class _AuthRegisterState extends State<AuthRegister> {
             builder: (context, state) {
               final isLoading = state is AuthLoading;
               return AuthButton(
-                label: 'Sign up',
+                label: 'Sign Up',
                 isLoading: isLoading,
                 onPressed:
                     isLoading
                         ? null
                         : () {
-                          if (passwordController.text !=
-                              confirmPasswordController.text) {
+                          final input = emailOrPhoneController.text.trim();
+                          final password = passwordController.text.trim();
+                          final confirmPassword =
+                              confirmPasswordController.text.trim();
+                          final isPhone = RegExp(
+                            r'^\+?[0-9]{10,15}$',
+                          ).hasMatch(input);
+                          final isEmail = RegExp(
+                            r'^[\w\.-]+@[\w\.-]+\.\w+$',
+                          ).hasMatch(input);
+                          if (password != confirmPassword) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text('Passwords do not match'),
@@ -87,10 +98,17 @@ class _AuthRegisterState extends State<AuthRegister> {
                             );
                             return;
                           }
-                          context.read<AuthCubit>().register(
-                            emailController.text.trim(),
-                            passwordController.text.trim(),
-                          );
+                          if (!isPhone && !isEmail) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  'Enter a valid email or phone number',
+                                ),
+                              ),
+                            );
+                            return;
+                          }
+                          context.read<AuthCubit>().register(input, password);
                         },
               );
             },

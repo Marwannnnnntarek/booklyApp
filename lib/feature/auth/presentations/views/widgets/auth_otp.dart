@@ -6,15 +6,17 @@ import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class AuthOtp extends StatelessWidget {
-  const AuthOtp({
+  AuthOtp({
     super.key,
     required this.label,
     required this.authButton,
     required this.authToggleText,
     required this.onPressed,
+    required this.controller,
   });
   final String label, authButton, authToggleText;
   final void Function() onPressed;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,6 +35,7 @@ class AuthOtp extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         PinCodeTextField(
+          controller: controller,
           appContext: context,
           length: 6,
           pinTheme: PinTheme(

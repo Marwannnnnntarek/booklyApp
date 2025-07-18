@@ -33,7 +33,10 @@ class _LoginAndRegisterViewState extends State<LoginAndRegisterView> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    AuthHeader(image: 'assets/images/Star 8.png'),
+                    AuthHeader(
+                      image: 'assets/images/Star 8.png',
+                      logo: 'assets/images/Logo.png',
+                    ),
                     const SizedBox(height: 40),
                     // Toggle Buttons
                     Container(

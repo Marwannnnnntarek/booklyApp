@@ -34,8 +34,8 @@ class _AuthLoginState extends State<AuthLogin> {
       child: Column(
         children: [
           AuthTextField(
-            label: 'Email address',
-            hint: 'Enter your email',
+            label: 'Email',
+            hint: 'you@example.com',
             controller: emailController,
           ),
           const SizedBox(height: 20),

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ResetPasswordView2 extends StatelessWidget {
-  const ResetPasswordView2({super.key});
-
+  ResetPasswordView2({super.key});
+  final TextEditingController otpController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -23,6 +23,7 @@ class ResetPasswordView2 extends StatelessWidget {
                 vertical: size.height * 0.08,
               ),
               child: AuthOtp(
+                controller: otpController,
                 label: 'Input your OTP',
                 authButton: 'Verify Email Address',
                 authToggleText: 'Previous step',

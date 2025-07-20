@@ -10,41 +10,34 @@ class BooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return BlocBuilder<BooksCubit, BooksState>(
       builder: (context, state) {
         if (state is BooksSuccess) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-            child: SizedBox(
-              height: 200,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: BouncingScrollPhysics(),
-                itemCount: state.books.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap:
-                        () => context.push(
-                          AppRoutes.booksDetails,
-                          extra: state.books[index],
-                        ),
-                    child: BooksImages(
-                      imageUrl:
-                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                          '',
-                    ),
-                  );
-                },
-              ),
+          return GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
             ),
+
+            physics: BouncingScrollPhysics(),
+            itemCount: state.books.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap:
+                    () => context.push(
+                      AppRoutes.booksDetails,
+                      extra: state.books[index],
+                    ),
+                child: BooksImages(
+                  imageUrl:
+                      state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
+                ),
+              );
+            },
           );
         } else if (state is BooksFailure) {
           return Text('Error');
         }
-        // else if (state is BooksLoading) {
-        //   return Center(child: CircularProgressIndicator());
-        // }
-        // Default fallback widget
         return SizedBox.shrink();
       },
     );

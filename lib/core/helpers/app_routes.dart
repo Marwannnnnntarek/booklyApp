@@ -23,7 +23,7 @@ class AppRoutes {
   static const String booksDetails = '/BooksDetails';
 
   static final GoRouter router = GoRouter(
-    initialLocation: splash,
+    initialLocation: home,
     routes: [
       GoRoute(path: splash, builder: (context, state) => SplashView()),
       GoRoute(

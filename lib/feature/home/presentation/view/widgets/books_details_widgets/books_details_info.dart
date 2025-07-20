@@ -21,7 +21,10 @@ class BooksDetailsInfo extends StatelessWidget {
         ),
         BooksDetailsText(
           title: item.volumeInfo.title!,
-          subTitle: item.volumeInfo.authors![0],
+          subTitle:
+              item.volumeInfo.authors?.isNotEmpty == true
+                  ? item.volumeInfo.authors![0]
+                  : 'Unknown',
         ),
         BooksDetailsRating(
           rating: item.volumeInfo.maturityRating!,

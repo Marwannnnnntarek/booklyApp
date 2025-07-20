@@ -18,7 +18,10 @@ class _BooksDetailsState extends State<BooksDetails> {
   @override
   void initState() {
     context.read<SimilarBooksCubit>().fetchSimilarBoosk(
-      category: widget.item.volumeInfo.categories![0],
+      category:
+          widget.item.volumeInfo.categories?.isNotEmpty == true
+              ? widget.item.volumeInfo.categories![0]
+              : 'Unknown',
     );
     super.initState();
   }

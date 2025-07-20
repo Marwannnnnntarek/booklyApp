@@ -30,8 +30,52 @@ class HomeView extends StatelessWidget {
             horizontal: size.width * 0.01,
             vertical: size.height * 0.01,
           ),
-          child: BooksListView(),
+          child: ListView(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: PopupMenuButton<String>(
+                  icon: const Icon(Icons.menu, color: Colors.white),
+                  color: Colors.white, // Optional: use theme for dark/light
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 6,
+                  onSelected: (value) {},
+                  itemBuilder:
+                      (context) => [
+                        _buildPopupMenuItem('Fiction', Icons.menu_book),
+                        _buildPopupMenuItem('Science', Icons.science),
+                        _buildPopupMenuItem('History', Icons.history_edu),
+                        _buildPopupMenuItem('Business', Icons.work),
+                      ],
+                ),
+              ),
+
+              Expanded(child: BooksListView()),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  PopupMenuItem<String> _buildPopupMenuItem(String text, IconData icon) {
+    return PopupMenuItem<String>(
+      value: text,
+      child: Row(
+        children: [
+          Icon(icon, size: 20, color: Colors.deepPurple),
+          const SizedBox(width: 10),
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.black87,
+            ),
+          ),
+        ],
       ),
     );
   }

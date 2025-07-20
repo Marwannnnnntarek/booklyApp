@@ -10,16 +10,16 @@ class BooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return BlocBuilder<BooksCubit, BooksState>(
       builder: (context, state) {
         if (state is BooksSuccess) {
           return GridView.builder(
+            shrinkWrap: true,
+
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
-
-            physics: BouncingScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return GestureDetector(

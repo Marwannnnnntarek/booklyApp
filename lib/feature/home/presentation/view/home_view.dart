@@ -36,8 +36,8 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 100,
-                width: 100,
+                height: size.height * 0.5,
+                width: size.width * 0.5,
                 child: Image.asset('assets/images/Logo.png'),
               ),
               AuthLogout(),

@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class AuthOtp extends StatelessWidget {
-  AuthOtp({
+  const AuthOtp({
     super.key,
     required this.label,
     required this.authButton,

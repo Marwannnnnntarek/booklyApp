@@ -1,9 +1,7 @@
 import 'package:bookly/core/services/service_locator.dart';
 import 'package:bookly/feature/auth/presentations/views/email_verification_view.dart';
 import 'package:bookly/feature/auth/presentations/views/login_and_register_view.dart';
-import 'package:bookly/feature/auth/presentations/views/reset_password_view1.dart';
-import 'package:bookly/feature/auth/presentations/views/reset_password_view2.dart';
-import 'package:bookly/feature/auth/presentations/views/reset_password_view3.dart';
+import 'package:bookly/feature/auth/presentations/views/reset_password_view.dart';
 import 'package:bookly/feature/home/data/models/book_model/item.dart';
 import 'package:bookly/feature/home/data/repos/home_repo_implementation.dart';
 import 'package:bookly/feature/home/presentation/view/books_details.dart';
@@ -20,9 +18,7 @@ class AppRoutes {
   static const String loginAndRegister = '/LoginAndRegisterView';
   // static const String otpVerify = '/OtpVerificationView';
   static const String emailVerify = '/EmailVerificationView';
-  static const String reset1 = '/ResetPasswordView1';
-  static const String reset2 = '/ResetPasswordView2';
-  static const String reset3 = '/ResetPasswordView3';
+  static const String reset = '/ResetPasswordView';
   static const String home = '/HomeView';
   static const String booksDetails = '/BooksDetails';
 
@@ -38,17 +34,12 @@ class AppRoutes {
         path: loginAndRegister,
         builder: (context, state) => LoginAndRegisterView(),
       ),
-      // GoRoute(
-      //   path: otpVerify,
-      //   builder: (context, state) => OtpVerificationView(),
-      // ),
+
       GoRoute(
         path: emailVerify,
         builder: (context, state) => EmailVerificationView(),
       ),
-      GoRoute(path: reset1, builder: (context, state) => ResetPasswordView1()),
-      GoRoute(path: reset2, builder: (context, state) => ResetPasswordView2()),
-      GoRoute(path: reset3, builder: (context, state) => ResetPasswordView3()),
+      GoRoute(path: reset, builder: (context, state) => ResetPasswordView()),
       GoRoute(path: home, builder: (context, state) => HomeView()),
       GoRoute(
         path: booksDetails,

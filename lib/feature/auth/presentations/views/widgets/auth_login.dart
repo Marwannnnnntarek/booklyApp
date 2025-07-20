@@ -18,6 +18,7 @@ class _AuthLoginState extends State<AuthLogin> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool _obscurePassword = true;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,55 +32,72 @@ class _AuthLoginState extends State<AuthLogin> {
           ).showSnackBar(SnackBar(content: Text(state.errMessage)));
         }
       },
-      child: Column(
-        children: [
-          AuthTextField(
-            label: 'Email',
-            hint: 'you@example.com',
-            controller: emailController,
-          ),
-          const SizedBox(height: 20),
-          AuthTextField(
-            label: 'Password',
-            hint: 'Enter your password',
-            controller: passwordController,
-            isPassword: true,
-            obscureText: _obscurePassword,
-            togglePassword: () {
-              setState(() {
-                _obscurePassword = !_obscurePassword;
-              });
-            },
-          ),
-          const SizedBox(height: 20),
-          BlocBuilder<AuthCubit, AuthState>(
-            builder: (context, state) {
-              final isLoading = state is AuthLoading;
-              return AuthButton(
-                label: 'Sign in',
-                isLoading: isLoading,
-                onPressed:
-                    isLoading
-                        ? null
-                        : () {
-                          context.read<AuthCubit>().loginWithEmail(
-                            emailController.text.trim(),
-                            passwordController.text.trim(),
-                          );
-                        },
-              );
-            },
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: AuthToggleText(
-              actionText: 'Forgot password?',
-              onPressed: () {
-                context.push(AppRoutes.reset1);
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            AuthTextField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Email is required';
+                }
+                return null;
+              },
+              label: 'Email',
+              hint: 'you@example.com',
+              controller: emailController,
+            ),
+            const SizedBox(height: 20),
+            AuthTextField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Password is required';
+                }
+                return null;
+              },
+              label: 'Password',
+              hint: 'Enter your password',
+              controller: passwordController,
+              isPassword: true,
+              obscureText: _obscurePassword,
+              togglePassword: () {
+                setState(() {
+                  _obscurePassword = !_obscurePassword;
+                });
               },
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            BlocBuilder<AuthCubit, AuthState>(
+              builder: (context, state) {
+                final isLoading = state is AuthLoading;
+                return AuthButton(
+                  label: 'Sign in',
+                  isLoading: isLoading,
+                  onPressed:
+                      isLoading
+                          ? null
+                          : () {
+                            if (_formKey.currentState!.validate()) {
+                              context.read<AuthCubit>().loginWithEmail(
+                                emailController.text.trim(),
+                                passwordController.text.trim(),
+                              );
+                            }
+                          },
+                );
+              },
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: AuthToggleText(
+                actionText: 'Forgot password?',
+                onPressed: () {
+                  context.push(AppRoutes.reset);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

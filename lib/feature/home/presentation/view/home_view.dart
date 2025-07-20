@@ -16,22 +16,6 @@ class HomeView extends StatelessWidget {
           flexibleSpace: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                height: 100,
-                width: 100,
-                child: Image.asset('assets/images/Logo.png'),
-              ),
-              AuthLogout(),
-            ],
-          ),
-        ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.01,
-            vertical: size.height * 0.01,
-          ),
-          child: ListView(
-            children: [
               Align(
                 alignment: Alignment.topLeft,
                 child: PopupMenuButton<String>(
@@ -51,10 +35,21 @@ class HomeView extends StatelessWidget {
                       ],
                 ),
               ),
-
-              Expanded(child: BooksListView()),
+              SizedBox(
+                height: 100,
+                width: 100,
+                child: Image.asset('assets/images/Logo.png'),
+              ),
+              AuthLogout(),
             ],
           ),
+        ),
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.01,
+            vertical: size.height * 0.01,
+          ),
+          child: BooksListView(),
         ),
       ),
     );

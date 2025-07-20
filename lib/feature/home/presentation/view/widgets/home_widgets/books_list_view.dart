@@ -14,12 +14,10 @@ class BooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is BooksSuccess) {
           return GridView.builder(
-            shrinkWrap: true,
-
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
-            physics: NeverScrollableScrollPhysics(),
+            physics: BouncingScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return GestureDetector(

@@ -20,7 +20,7 @@ class AuthLogout extends StatelessWidget {
         }
       },
       child: IconButton(
-        icon: const Icon(Icons.logout),
+        icon: const Icon(Icons.logout, color: Colors.white),
         onPressed: () {
           showDialog(
             context: context,

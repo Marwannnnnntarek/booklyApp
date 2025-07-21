@@ -11,14 +11,9 @@ class BooksDetailsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 10,
       children: [
-        SizedBox(
-          height: 300,
-          child: BooksImages(
-            imageUrl: item.volumeInfo.imageLinks?.thumbnail ?? '',
-          ),
-        ),
+        BooksImages(imageUrl: item.volumeInfo.imageLinks?.thumbnail ?? ''),
+        SizedBox(height: 10),
         BooksDetailsText(
           title: item.volumeInfo.title!,
           subTitle:
@@ -26,10 +21,8 @@ class BooksDetailsInfo extends StatelessWidget {
                   ? item.volumeInfo.authors![0]
                   : 'Unknown',
         ),
-        BooksDetailsRating(
-          rating: item.volumeInfo.maturityRating!,
-          count: '87585',
-        ),
+        SizedBox(height: 10),
+
         BooksDetailsBar(item: item),
       ],
     );

@@ -9,7 +9,11 @@ class BooksDetailsListViewHeader extends StatelessWidget {
       children: [
         Text(
           'You can also like',
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ],
     );

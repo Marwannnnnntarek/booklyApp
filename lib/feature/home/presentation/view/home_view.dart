@@ -1,5 +1,5 @@
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_logout.dart';
-import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/books_list_view.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/home_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -49,7 +49,7 @@ class HomeView extends StatelessWidget {
             horizontal: size.width * 0.01,
             vertical: size.height * 0.01,
           ),
-          child: BooksListView(),
+          child: HomeBooksListView(),
         ),
       ),
     );

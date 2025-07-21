@@ -1,12 +1,15 @@
 import 'package:bookly/core/helpers/app_routes.dart';
+import 'package:bookly/feature/home/data/models/book_model/item.dart';
+import 'package:bookly/feature/home/presentation/view/home_view.dart';
 import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/books_images.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/home_book_card.dart';
 import 'package:bookly/feature/home/presentation/view_model/books_cubit/books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class BooksListView extends StatelessWidget {
-  const BooksListView({super.key});
+class HomeBooksListView extends StatelessWidget {
+  const HomeBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class BooksListView extends StatelessWidget {
         if (state is BooksSuccess) {
           return GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount: 3,
             ),
             physics: BouncingScrollPhysics(),
             itemCount: state.books.length,

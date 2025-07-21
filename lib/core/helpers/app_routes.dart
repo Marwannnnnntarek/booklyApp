@@ -4,7 +4,7 @@ import 'package:bookly/feature/auth/presentations/views/login_and_register_view.
 import 'package:bookly/feature/auth/presentations/views/reset_password_view.dart';
 import 'package:bookly/feature/home/data/models/book_model/item.dart';
 import 'package:bookly/feature/home/data/repos/home_repo_implementation.dart';
-import 'package:bookly/feature/home/presentation/view/books_details.dart';
+import 'package:bookly/feature/home/presentation/view/books_details_view.dart';
 import 'package:bookly/feature/home/presentation/view/home_view.dart';
 import 'package:bookly/feature/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly/feature/splash/views/splash_view.dart';
@@ -16,11 +16,10 @@ class AppRoutes {
   static const String splash = '/SplashView';
   static const String splashPageView = '/SplashPageView';
   static const String loginAndRegister = '/LoginAndRegisterView';
-  // static const String otpVerify = '/OtpVerificationView';
   static const String emailVerify = '/EmailVerificationView';
   static const String reset = '/ResetPasswordView';
   static const String home = '/HomeView';
-  static const String booksDetails = '/BooksDetails';
+  static const String booksDetails = '/BooksDetailsView';
 
   static final GoRouter router = GoRouter(
     initialLocation: splash,
@@ -48,7 +47,7 @@ class AppRoutes {
               create:
                   (context) =>
                       SimilarBooksCubit(getIt.get<HomeRepoImplementation>()),
-              child: BooksDetails(item: state.extra as Item),
+              child: BooksDetailsView(item: state.extra as Item),
             ),
       ),
     ],

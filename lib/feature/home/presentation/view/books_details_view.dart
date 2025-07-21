@@ -6,15 +6,15 @@ import 'package:bookly/feature/home/presentation/view_model/similar_books_cubit/
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BooksDetails extends StatefulWidget {
+class BooksDetailsView extends StatefulWidget {
   final Item item;
-  const BooksDetails({super.key, required this.item});
+  const BooksDetailsView({super.key, required this.item});
 
   @override
-  State<BooksDetails> createState() => _BooksDetailsState();
+  State<BooksDetailsView> createState() => _BooksDetailsViewState();
 }
 
-class _BooksDetailsState extends State<BooksDetails> {
+class _BooksDetailsViewState extends State<BooksDetailsView> {
   @override
   void initState() {
     context.read<SimilarBooksCubit>().fetchSimilarBoosk(
@@ -28,11 +28,16 @@ class _BooksDetailsState extends State<BooksDetails> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color(0xff6B5FF8),
         appBar: BooksDetailsAppBar(),
         body: Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15),
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.01,
+            vertical: size.height * 0.01,
+          ),
           child: SingleChildScrollView(
             child: Column(
               spacing: 50,

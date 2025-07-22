@@ -1,5 +1,5 @@
 import 'package:bookly/core/helpers/app_routes.dart';
-import 'package:bookly/feature/auth/presentations/view_model/cubit/auth_cubit.dart';
+import 'package:bookly/feature/auth/presentations/cubit/auth/auth_cubit.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_button.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_header2.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_text_field.dart';

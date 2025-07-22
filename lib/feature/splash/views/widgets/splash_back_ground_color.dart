@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomBackGroundColor extends StatelessWidget {
-  const CustomBackGroundColor({super.key});
+class SplashBackGroundColor extends StatelessWidget {
+  const SplashBackGroundColor({super.key});
 
   @override
   Widget build(BuildContext context) {

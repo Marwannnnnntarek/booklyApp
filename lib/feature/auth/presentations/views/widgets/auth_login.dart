@@ -1,5 +1,5 @@
 import 'package:bookly/core/helpers/app_routes.dart';
-import 'package:bookly/feature/auth/presentations/view_model/cubit/auth_cubit.dart';
+import 'package:bookly/feature/auth/presentations/cubit/auth/auth_cubit.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_button.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_text_field.dart';
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_toggle_text.dart';
@@ -22,7 +22,6 @@ class _AuthLoginState extends State<AuthLogin> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class CustomPageIndicator extends StatelessWidget {
-  const CustomPageIndicator({super.key, required this.controller});
+class SplashPageIndicator extends StatelessWidget {
+  const SplashPageIndicator({super.key, required this.controller});
 
   final PageController controller;
 

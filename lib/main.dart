@@ -1,9 +1,8 @@
 import 'package:bookly/core/helpers/app_routes.dart';
-import 'package:bookly/core/services/service_locator.dart';
-import 'package:bookly/feature/auth/presentations/view_model/cubit/auth_cubit.dart';
+import 'package:bookly/core/data/services/service_locator.dart';
+import 'package:bookly/feature/auth/presentations/cubit/auth/auth_cubit.dart';
 import 'package:bookly/feature/home/data/repos/home_repo_implementation.dart';
-import 'package:bookly/feature/home/presentation/view_model/best_seller_books_cubit/best_seller_books_cubit.dart';
-import 'package:bookly/feature/home/presentation/view_model/books_cubit/books_cubit.dart';
+import 'package:bookly/feature/home/presentation/cubit/books_cubit/books_cubit.dart';
 import 'package:bookly/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -29,12 +28,6 @@ class MyApp extends StatelessWidget {
           create:
               (context) =>
                   BooksCubit(getIt.get<HomeRepoImplementation>())..fetchBoosk(),
-        ),
-        BlocProvider(
-          create:
-              (context) =>
-                  BestSellerBooksCubit(getIt.get<HomeRepoImplementation>())
-                    ..fetchBestSellerBoosk(),
         ),
       ],
       child: MaterialApp.router(

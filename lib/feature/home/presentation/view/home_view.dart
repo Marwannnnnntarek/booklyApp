@@ -1,5 +1,5 @@
 import 'package:bookly/feature/auth/presentations/views/widgets/auth_logout.dart';
-import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/home_books_list_view.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -26,13 +26,7 @@ class HomeView extends StatelessWidget {
                   ),
                   elevation: 6,
                   onSelected: (value) {},
-                  itemBuilder:
-                      (context) => [
-                        _buildPopupMenuItem('Fiction', Icons.menu_book),
-                        _buildPopupMenuItem('Science', Icons.science),
-                        _buildPopupMenuItem('History', Icons.history_edu),
-                        _buildPopupMenuItem('Business', Icons.work),
-                      ],
+                  itemBuilder: (context) => [],
                 ),
               ),
               SizedBox(
@@ -51,26 +45,6 @@ class HomeView extends StatelessWidget {
           ),
           child: HomeBooksListView(),
         ),
-      ),
-    );
-  }
-
-  PopupMenuItem<String> _buildPopupMenuItem(String text, IconData icon) {
-    return PopupMenuItem<String>(
-      value: text,
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: Colors.deepPurple),
-          const SizedBox(width: 10),
-          Text(
-            text,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Colors.black87,
-            ),
-          ),
-        ],
       ),
     );
   }

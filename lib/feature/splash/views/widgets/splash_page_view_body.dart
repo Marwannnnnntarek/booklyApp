@@ -1,17 +1,17 @@
-import 'package:bookly/feature/splash/views/widgets/custom_back_ground_color.dart';
-import 'package:bookly/feature/splash/views/widgets/custom_page_indicator.dart';
-import 'package:bookly/feature/splash/views/widgets/custom_text1.dart';
-import 'package:bookly/feature/splash/views/widgets/custom_text2.dart';
-import 'package:bookly/feature/splash/views/widgets/custom_text_button1.dart';
-import 'package:bookly/feature/splash/views/widgets/custom_text_button2.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_back_ground_color.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_page_indicator.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_text1.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_text2.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_text_button1.dart';
+import 'package:bookly/feature/splash/views/widgets/splash_text_button2.dart';
 import 'package:flutter/material.dart';
 
-class SplashPageBody extends StatelessWidget {
+class SplashPageViewBody extends StatelessWidget {
   final void Function()? onPressed1, onPressed2;
   final PageController controller;
   final String image, text1, text2, textButton1, textButton2;
 
-  const SplashPageBody({
+  const SplashPageViewBody({
     super.key,
     required this.controller,
     required this.image,
@@ -39,7 +39,7 @@ class SplashPageBody extends StatelessWidget {
               height: size.height,
               width: size.width,
             ),
-            const CustomBackGroundColor(),
+            const SplashBackGroundColor(),
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
@@ -50,11 +50,11 @@ class SplashPageBody extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CustomPageIndicator(controller: controller),
+                    SplashPageIndicator(controller: controller),
                     const SizedBox(height: 12),
-                    CustomText1(text1: text1),
+                    SplashText1(text1: text1),
                     const SizedBox(height: 8),
-                    CustomText2(text2: text2),
+                    SplashText2(text2: text2),
                     const SizedBox(height: 20),
                     CustomTextButton1(
                       textButton1: textButton1,

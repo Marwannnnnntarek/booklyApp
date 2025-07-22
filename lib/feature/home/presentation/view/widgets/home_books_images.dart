@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BooksImages extends StatelessWidget {
-  const BooksImages({super.key, required this.imageUrl});
+class HomeBooksImages extends StatelessWidget {
+  const HomeBooksImages({super.key, required this.imageUrl});
 
   final String imageUrl;
 

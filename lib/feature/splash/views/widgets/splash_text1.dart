@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CustomText2 extends StatelessWidget {
-  const CustomText2({super.key, required this.text2});
+class SplashText1 extends StatelessWidget {
+  const SplashText1({super.key, required this.text1});
 
-  final String text2;
+  final String text1;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      text2,
+      text1,
       textAlign: TextAlign.center,
       style: TextStyle(
         color: Colors.white,
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

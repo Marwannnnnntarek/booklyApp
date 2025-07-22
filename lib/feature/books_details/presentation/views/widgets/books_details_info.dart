@@ -1,8 +1,7 @@
-import 'package:bookly/feature/home/data/models/book_model/item.dart';
-import 'package:bookly/feature/home/presentation/view/widgets/books_details_widgets/books_details_bar.dart';
-import 'package:bookly/feature/home/presentation/view/widgets/books_details_widgets/books_details_rating.dart';
-import 'package:bookly/feature/home/presentation/view/widgets/books_details_widgets/books_details_text.dart';
-import 'package:bookly/feature/home/presentation/view/widgets/home_widgets/books_images.dart';
+import 'package:bookly/core/data/models/book_model/item.dart';
+import 'package:bookly/feature/books_details/presentation/views/widgets/books_details_bar.dart';
+import 'package:bookly/feature/books_details/presentation/views/widgets/books_details_text.dart';
+import 'package:bookly/feature/home/presentation/view/widgets/home_books_images.dart';
 import 'package:flutter/material.dart';
 
 class BooksDetailsInfo extends StatelessWidget {
@@ -12,7 +11,7 @@ class BooksDetailsInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BooksImages(imageUrl: item.volumeInfo.imageLinks?.thumbnail ?? ''),
+        HomeBooksImages(imageUrl: item.volumeInfo.imageLinks?.thumbnail ?? ''),
         SizedBox(height: 10),
         BooksDetailsText(
           title: item.volumeInfo.title!,

@@ -1,16 +1,34 @@
 # bookly
 
-A new Flutter project.
+A modern and responsive Book Application built with Flutter and Dart, following the MVVM architecture for clean and maintainable code. The app integrates Firebase Authentication for secure login & registration, and uses Dio to fetch real-time book data from the Google Books API.
 
-## Getting Started
+It provides featured books, newest books, detailed book information, and preview functionality via URL Launcher, all wrapped in a smooth and responsive UI that works on both Android & iOS.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+🔹 MVVM Pattern → Scalable and testable architecture
+🔹 Firebase Authentication → Secure user login & registration
+🔹 Cubit State Management → Lightweight & efficient state handling
+🔹 Dio Integration → Robust API client with error handling
+🔹 Google Books API → Reliable book data source
+🔹 Featured Books → Highlighted collection of top books
+🔹 Newest Books → Stay updated with the latest releases
+🔹 Book Details → Comprehensive information for each book
+🔹 URL Launcher → Preview and read books online
+🔹 Responsive UI → Works seamlessly on both Android & iOS
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tech Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Flutter & Dart
+
+MVVM Architecture
+
+Cubit (Bloc Library) for state management
+
+Firebase Authentication for user management
+
+Dio for API requests
+
+Google Books API for book data
+
+URL Launcher for external previews

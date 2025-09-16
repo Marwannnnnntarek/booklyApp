@@ -7,14 +7,23 @@ It provides featured books, newest books, detailed book information, and preview
 ## Features
 
 🔹 MVVM Pattern → Scalable and testable architecture
+
 🔹 Firebase Authentication → Secure user login & registration
+
 🔹 Cubit State Management → Lightweight & efficient state handling
+
 🔹 Dio Integration → Robust API client with error handling
+
 🔹 Google Books API → Reliable book data source
+
 🔹 Featured Books → Highlighted collection of top books
+
 🔹 Newest Books → Stay updated with the latest releases
+
 🔹 Book Details → Comprehensive information for each book
+
 🔹 URL Launcher → Preview and read books online
+
 🔹 Responsive UI → Works seamlessly on both Android & iOS
 
 ## Tech Stack
